@@ -1,0 +1,21 @@
+{% extends 'signup.html' %}
+
+{% block content %}
+<div class="login-page">
+    <div class="card">
+        <form action="" method="post">
+            {% csrf_token %}
+                <h2>Username</h2>
+                <input type="text" name = 'username' placeholder="username">
+                <h2>Password</h2>
+                <input type="password" name = 'password' placeholder="password">
+                <button type="submit">Login</button>
+        </form>
+
+        <div class="line">
+            <h3>Don't have an account?</h3>
+            <a href="{% url 'login' %}" class="btn-link">Signunp</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

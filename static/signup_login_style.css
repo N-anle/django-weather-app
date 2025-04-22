@@ -1,0 +1,117 @@
+/* Make sure we don't affect other pages with this wrapper */
+.signup-page, .login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card stays at the center */
+.card {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Typography */
+.card h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card h3 {
+    font-size: 1rem;
+    color: #777;
+    text-align: center;
+}
+
+/* Inputs */
+.card input {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.card input:focus {
+    border-color: #007bff;
+}
+
+/* Button */
+.card button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.card button:hover {
+    background: #0056b3;
+}
+
+/* Login/signup link */
+.line {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.btn-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+}
+
+
+.messages {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 0;
+    list-style: none;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.messages li {
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.messages li.error {
+    background-color: #e74c3c; /* red */
+}
+
+.messages li.success {
+    background-color: #2ecc71; /* green */
+}
+
+.messages li.warning {
+    background-color: #f39c12; /* orange */
+}
+
+.messages li.info {
+    background-color: #3498db; /* blue */
+}

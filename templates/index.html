@@ -1,0 +1,56 @@
+
+{% load static %}
+
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    
+</head>
+{% block content %}
+<body>
+    <nav>
+        <a href="{% url 'logout' %}" class="nav-link">Logout</a>
+    </nav>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{form.name}}
+            <button type="submit">Get weather</button>
+        </div>
+    </form>
+
+    {% if cities %}
+    <form action="{% url 'delete_all' %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="delete_button">Delete all</button>
+    </form>
+    {% endif %}
+    {% for city in cities %}
+    <div class="card">
+        <div class="city">
+            <div class="header">
+                <img src="http://openweathermap.org/img/wn/{{ city.icon }}@2x.png" alt="Weather icon" class = "icon">
+                <h1 class = "city">{{city.city}}</h1>
+            </div>
+
+            <div class="subsection">
+                <h2>{{city.temperature}}&#176 C</h2>
+                <h3>{{city.weather}}</h3>
+                <h3>{{city.description}}</h3>
+                <form action= "{% url 'delete_city' city.city.id %}" method="post">
+                    {% csrf_token %}
+                    <Button type="submit" class = 'delete_button'>Delete City</Button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+{% endblock %}
+</html>
