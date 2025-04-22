@@ -77,7 +77,4 @@ A simple Django web application that allows users to sign up, log in, add cities
 7.  Use the **delete buttons** next to each city or the "Delete All" button to remove cities from your list.
 8.  **Log out** when finished.
 
-## File Structure Overview (Relevant Files)
-
-weather-api/|-- weather/|   |-- migrations/|   |-- init.py|   |-- admin.py|   |-- apps.py|   |-- forms.py       # Contains the CityForm|   |-- models.py      # Contains the City model|   |-- tests.py|   |-- urls.py        # App-specific URLs (you'll need to create this and include it in the project urls.py)|   |-- views.py       # Contains the view logic (signup, login, weather, delete, etc.)|-- templates/         # Directory for HTML templates|   |-- home.html|   |-- signup.html|   |-- login.html|   |-- index.html     # Weather display page|-- your_project_name/|   |-- init.py|   |-- asgi.py|   |-- settings.py    # Project settings (database, installed apps, etc.)|   |-- urls.py        # Project-level URLs|   |-- wsgi.py|-- manage.py          # Django management script|-- requirements.txt   # Project dependencies|-- README.md        
 
